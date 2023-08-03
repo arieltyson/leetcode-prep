@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class Leetcode {
 
     public static void main(String[] args) {
@@ -8,7 +10,10 @@ public class Leetcode {
         // instead of the number. For numbers that are multiples of both 3 and 5, print "FizzBuzz".
 
         int rangeLimit = 100;
+        System.out.println("Fizz Buzz Solution : ");
+        System.out.println();
         fizzBuzz(rangeLimit);
+        System.out.println();
         System.out.println();
 
         // Rectangle Overlap problem
@@ -23,10 +28,36 @@ public class Leetcode {
         int[] rect1 = {0, 0, 2, 2};
         int[] rect2 = {1, 1, 3, 3};
 
+        System.out.println(" Rectangle Overlap Solution: ");
         boolean rectOverlap = isRectangleOverlap(rect1, rect2);
+        System.out.println(" Rectangles overlap: " + rectOverlap);
         System.out.println();
-        System.out.println("Rectangles overlap: " + rectOverlap);
+
+        // Valid Parenthesis Problem
+        //Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
+        // determine if the input string is valid.
+        //
+        //An input string is valid if:
+        //
+        //Open brackets must be closed by the same type of brackets.
+        //Open brackets must be closed in the correct order.
+        //Every close bracket has a corresponding open bracket of the same type.
+
+        String[] testCases = {"()", "()[]{}", "(]", "([)]", "{[]}", "", "[", "}", "{{[[]]}}", "([{}])", "[(])", "{[()]}",
+                "}{"};
+        int i = 0;
+        System.out.println(" Valid Parenthesis Solution: ");
+        System.out.println();
+        for (String testCase : testCases) {
+            boolean myResult = isValid(testCases[i++]);
+            System.out.println(testCase + " => " + myResult);
+        }
     }
+
+
+
+
+    // Start of implementations to problems described above
 
     // FizzBuzz Implementation
     public static void fizzBuzz(int rangeLimit) {
@@ -68,5 +99,28 @@ public class Leetcode {
 
         // Check if the intersection rectangle has a positive area
         return (right > left) && (top > bottom);
+    }
+
+    // Valid Parenthesis Implementation
+
+    public static boolean isValid(String s) {
+        if (s.length() % 2 != 0 || s.isEmpty() || s.length() > Math.pow(10,4)) {
+            return false;
+        }
+
+        Stack<Character> stack = new Stack <Character>();
+
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                stack.push(')');
+            } else if (c == '{') {
+                stack.push('}');
+            } else if (c == '[') {
+                stack.push(']');
+            } else if (stack.isEmpty() || stack.pop() != c) {
+                return false;
+            }
+        }
+        return stack.isEmpty();
     }
 }
