@@ -1,7 +1,7 @@
 package Problems;
 
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 public class TopKFrequentElements {
@@ -13,17 +13,21 @@ public class TopKFrequentElements {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         // Create a min-heap (priority queue) to store the elements based on their frequency
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(n -> map.get(n)));
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(
+                (a, b) -> a.getValue() - b.getValue()
+        );
         // Iterate through the hash map and push each element and its frequency into the heap
-        for (int num : map.keySet()) {
-            pq.offer(num);
-            pq.offer(map.get(num));
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            pq.offer(entry);
+            if (pq.size() > k) {
+                pq.poll();
+            }
         }
         // Create an array to store the result
         int[] res = new int[k];
         // Pop k elements from the heap and store them in the result array
         for (int i = 0; i < k; i++) {
-            res[i] = pq.poll();
+            res[i] = pq.poll().getKey();
         }
         // Return the result array
         return res;
