@@ -6,30 +6,29 @@ import java.util.PriorityQueue;
 
 public class TopKFrequentElements {
     public int[] topKFrequent(int[] nums, int k) {
-        // Create a hash map to store the frequency of each element in the array
-        HashMap<Integer, Integer> map = new HashMap<>();
-        // Iterate through the array and populate the hash map
+
+        HashMap<Integer,Integer> map = new HashMap<>();
+
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+            map.put(num,map.getOrDefault(num,0) + 1);
         }
-        // Create a min-heap (priority queue) to store the elements based on their frequency
-        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(
-                (a, b) -> a.getValue() - b.getValue()
-        );
-        // Iterate through the hash map and push each element and its frequency into the heap
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            pq.offer(entry);
-            if (pq.size() > k) {
-                pq.poll();
+
+        PriorityQueue<Map.Entry<Integer,Integer>> heap = new PriorityQueue<>((a,b) ->
+                a.getValue() - b.getValue());
+
+        for (Map.Entry<Integer, Integer> pair : map.entrySet()) {
+            heap.offer(pair);
+
+            if (heap.size() > k) {
+                heap.poll();
             }
         }
-        // Create an array to store the result
-        int[] res = new int[k];
-        // Pop k elements from the heap and store them in the result array
+
+        int[] result = new int[k];
         for (int i = 0; i < k; i++) {
-            res[i] = pq.poll().getKey();
+            result[i] = heap.poll().getKey();
         }
-        // Return the result array
-        return res;
+
+        return result;
     }
 }
