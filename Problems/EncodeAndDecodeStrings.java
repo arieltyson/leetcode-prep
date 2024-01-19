@@ -15,12 +15,12 @@ public class EncodeAndDecodeStrings {
     // Decodes a single string to a list of strings.
     public List<String> decode(String s) {
         List<String> res = new ArrayList<>();
-        Scanner scanner = new Scanner(s);
-        scanner.useDelimiter("/");
-        while (scanner.hasNext()) {
-            int len = scanner.nextInt();
-            String str = scanner.next();
-            res.add(str.substring(0, len));
+        int i = 0;
+        while (i < s.length()) {
+            int slash = s.indexOf('/', i);
+            int size = Integer.valueOf(s.substring(i, slash));
+            res.add(s.substring(slash + 1, slash + size + 1));
+            i = slash + size + 1;
         }
         return res;
     }
