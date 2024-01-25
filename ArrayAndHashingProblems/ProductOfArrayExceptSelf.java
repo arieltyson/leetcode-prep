@@ -1,4 +1,4 @@
-package Problems;
+package ArrayAndHashingProblems;
 
 public class ProductOfArrayExceptSelf {
     public int[] productExceptSelf(int[] nums) {

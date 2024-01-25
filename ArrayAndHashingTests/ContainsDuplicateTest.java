@@ -1,6 +1,6 @@
-package Tests;
+package ArrayAndHashingTests;
 
-import Problems.ContainsDuplicate;
+import ArrayAndHashingProblems.ContainsDuplicate;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

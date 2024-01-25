@@ -1,6 +1,6 @@
-package Tests;
+package ArrayAndHashingTests;
 
-import Problems.TwoSum;
+import ArrayAndHashingProblems.TwoSum;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
