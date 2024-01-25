@@ -1,4 +1,4 @@
-package ArrayAndHashingProblems;
+package ArrayAndHashing.ArrayAndHashingProblems;
 
 import java.util.*;
 

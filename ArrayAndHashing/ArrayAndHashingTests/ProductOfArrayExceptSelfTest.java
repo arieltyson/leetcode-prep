@@ -1,6 +1,6 @@
-package ArrayAndHashingTests;
+package ArrayAndHashing.ArrayAndHashingTests;
 
-import ArrayAndHashingProblems.ProductOfArrayExceptSelf;
+import ArrayAndHashing.ArrayAndHashingProblems.ProductOfArrayExceptSelf;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

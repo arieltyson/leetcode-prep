@@ -1,6 +1,6 @@
-package ArrayAndHashingTests;
+package ArrayAndHashing.ArrayAndHashingTests;
 
-import ArrayAndHashingProblems.ValidAnagrams;
+import ArrayAndHashing.ArrayAndHashingProblems.ValidAnagrams;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,6 +1,6 @@
-package ArrayAndHashingTests;
+package ArrayAndHashing.ArrayAndHashingTests;
 
-import ArrayAndHashingProblems.GroupAnagrams;
+import ArrayAndHashing.ArrayAndHashingProblems.GroupAnagrams;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

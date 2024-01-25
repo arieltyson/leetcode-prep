@@ -1,6 +1,6 @@
-package ArrayAndHashingTests;
+package ArrayAndHashing.ArrayAndHashingTests;
 
-import ArrayAndHashingProblems.TopKFrequentElements;
+import ArrayAndHashing.ArrayAndHashingProblems.TopKFrequentElements;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

@@ -1,6 +1,6 @@
-package ArrayAndHashingTests;
+package ArrayAndHashing.ArrayAndHashingTests;
 
-import ArrayAndHashingProblems.LongestConsecutiveSequence;
+import ArrayAndHashing.ArrayAndHashingProblems.LongestConsecutiveSequence;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

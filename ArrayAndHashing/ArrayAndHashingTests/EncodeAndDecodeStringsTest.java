@@ -1,7 +1,7 @@
-package ArrayAndHashingTests;
+package ArrayAndHashing.ArrayAndHashingTests;
 
 import org.junit.jupiter.api.Test;
-import ArrayAndHashingProblems.EncodeAndDecodeStrings;
+import ArrayAndHashing.ArrayAndHashingProblems.EncodeAndDecodeStrings;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;

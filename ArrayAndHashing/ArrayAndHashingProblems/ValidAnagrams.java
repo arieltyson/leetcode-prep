@@ -1,4 +1,4 @@
-package ArrayAndHashingProblems;
+package ArrayAndHashing.ArrayAndHashingProblems;
 
 public class ValidAnagrams {
     public boolean isAnagram(String s, String t) {
