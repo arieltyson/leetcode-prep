@@ -1,8 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Leetcode {
 
     public static void main(String[] args) {
+
+        // Fibonacci Number problem
+        // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence,
+        // such that each number is the sum of the two preceding ones, starting from 0 and 1.
+        // That is, F(0) = 0, F(1) = 1, F(n) = F(n - 1) + F(n - 2), for n > 1.
+        // Given n, calculate F(n).
+
+        int n = 10;
+        System.out.println("Fibonacci Number Solution : ");
+        System.out.println();
+        System.out.println("Fibonacci number at position " + n + " iteratively, is " + fibonacciIterative(n));
+        System.out.println("Fibonacci number at position " + n + " recursively, is " + fibonacciRecursive(n));
+        System.out.println("Fibonacci sequence up to position " + n + " is " + fibonacciSequence(n));
+        System.out.println();
+
 
         // FizzBuzz problem
         // Write a program that prints the numbers from 1 to 100, where N is an input integer.
@@ -55,6 +72,43 @@ public class Leetcode {
     }
 
     // Start of implementations to problems described above
+
+    // Fibonacci Number Implementation
+
+    public static int fibonacciIterative(int n) {
+        if (n <= 1) {
+            return n;
+        }
+
+        int first = 0;
+        int second = 1;
+
+        for (int i = 2; i <= n; i++) {
+            int sum = first + second;
+            first = second;
+            second = sum;
+        }
+        return second;
+    }
+
+    public static int fibonacciRecursive(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+    }
+
+    public static List<Integer> fibonacciSequence(int n) {
+
+        ArrayList<Integer> fibSequence = new ArrayList<>();
+        fibSequence.add(0);
+        fibSequence.add(1);
+
+        for (int i = 2; i <= n; i++) {
+            fibSequence.add(fibSequence.get(i - 1) + fibSequence.get(i - 2));
+        }
+        return fibSequence;
+    }
 
     // FizzBuzz Implementation
     public static void fizzBuzz(int rangeLimit) {
