@@ -6,6 +6,18 @@ public class Leetcode {
 
     public static void main(String[] args) {
 
+        // Binary Search problem
+        // Given an array of integers nums which is sorted in ascending order, and an integer target,
+        // write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+        // You must write an algorithm with O(log n) runtime complexity.
+
+        int[] nums = {-1, 0, 3, 5, 9, 12};
+        int target = 9;
+        System.out.println("Binary Search Solution : ");
+        System.out.println();
+        System.out.println("The index of " + target + " in the array is " + binarySearch(nums, target));
+        System.out.println();
+
         // Fibonacci Number problem
         // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence,
         // such that each number is the sum of the two preceding ones, starting from 0 and 1.
@@ -72,6 +84,29 @@ public class Leetcode {
     }
 
     // Start of implementations to problems described above
+
+    // Binary Search Implementation
+
+    public static int binarySearch(int[] nums, int target) {
+
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int middle = (left + right) / 2;
+
+            if (nums[middle] == target) {
+                return middle;
+            }
+
+            if (target < middle) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+        }
+        return -1;
+    }
 
     // Fibonacci Number Implementation
 
