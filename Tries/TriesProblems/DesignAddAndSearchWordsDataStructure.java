@@ -28,14 +28,15 @@ public class DesignAddAndSearchWordsDataStructure {
             return node.children[chs[k] - 'a'] != null && match(chs, k + 1, node.children[chs[k] - 'a']);
         } else {
             for (int i = 0; i < node.children.length; i++) {
-                if (node.children[i] != null && match(chs, k + 1, node.children[i])) {
-                    return true;
+                if (node.children[i] != null) {
+                    if (match(chs, k + 1, node.children[i])) {
+                        return true;
+                    }
                 }
             }
         }
         return false;
     }
-
     private class TrieNode {
         public TrieNode[] children = new TrieNode[26];
         public boolean isWord;
