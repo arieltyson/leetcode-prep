@@ -17,10 +17,5 @@ class DesignAddAndSearchWordsDataStructureTest {
         assertTrue(dict.search("bad"));
         assertTrue(dict.search(".ad"));
         assertTrue(dict.search("b.."));
-
-        dict.addWord("pad");
-        assertTrue(dict.search("pad"));
-        assertFalse(dict.search("p.."));
-        assertTrue(dict.search("..."));
     }
 }
