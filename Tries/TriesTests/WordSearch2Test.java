@@ -2,6 +2,8 @@ package Tries.TriesTests;
 
 import Tries.TriesProblems.WordSearch2;
 import org.junit.jupiter.api.Test;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,7 +20,9 @@ public class WordSearch2Test {
         };
         String[] words = {"oath","pea","eat","rain"};
         List<String> expected = Arrays.asList("eat","oath");
+        Collections.sort(expected);
         List<String> result = ws.findWords(board, words);
+        Collections.sort(result);
         assertEquals(expected, result);
     }
 }
