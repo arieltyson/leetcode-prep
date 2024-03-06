@@ -31,12 +31,12 @@ public class ContainerWithMostWaterTest {
 
         // Test case 5: Decreasing order
         int[] height5 = {9,8,7,6,5,4,3,2,1};
-        int expected5 = 16;
+        int expected5 = 20; // Changed from 16 to 20
         assertEquals(expected5, container.maxArea(height5));
 
         // Test case 6: Increasing order
         int[] height6 = {1,2,3,4,5,6,7,8,9};
-        int expected6 = 16;
+        int expected6 = 20; // Changed from 16 to 20
         assertEquals(expected6, container.maxArea(height6));
     }
 }
